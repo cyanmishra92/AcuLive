@@ -32,10 +32,10 @@ end
 
 count_rec = 0;
 sum_exec_times = 0;
-
+nummm = 3;
 tic;
 
-for R=1:65
+for R=1:nummm
   
   
   fprintf('\nSIGNAL INDEX: %d\n', R);
@@ -173,7 +173,7 @@ for R=1:65
     
   y = abs( y_act_sum_diff - y_rec_sum_diff)
   
-  if(y > 0.6*y_act_sum_diff)
+  if(y > 0.18*y_act_sum_diff)
     fprintf('Sound %d is recorded!\n', R);
     count_rec = count_rec + 1;
   else
@@ -189,11 +189,11 @@ for R=1:65
 
 end
 
-  acc = count_rec/65*100;
+  acc = count_rec/nummm*100;
   fprintf('The accuracy is: %f percent.\n', acc);
 
   sum_exec_times = toc;
-  sum_exec_times = sum_exec_times/65;
+  sum_exec_times = sum_exec_times/nummm;
 
   fprintf('The average execution time for an input is: %f seconds.\n', sum_exec_times);
 
